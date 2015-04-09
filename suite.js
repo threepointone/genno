@@ -30,7 +30,7 @@ describe('arrays', ()=> {
       (yield map([1, 2, 3, 4], fake1)).should.eql([10, 20, 30, 40]); 
 
       var delta = (Date.now() - start) - 400;
-      // (delta < 50 && delta > 0).should.be.ok;
+      (delta < 50 && delta > 0).should.be.ok;
       done();  
     });
   })
@@ -41,12 +41,12 @@ describe('arrays', ()=> {
       (yield mapSeries([1, 2, 3, 4], fake1)).should.eql([10, 20, 30, 40]); 
 
       var delta = (Date.now() - start) - 1000;
-      // (delta < 50 && delta > 0).should.be.ok;
+      (delta < 50 && delta > 0).should.be.ok;
       done();  
     });          
   });
 
-  it('mapLimit');
+  // it('mapLimit');
   
   it('reduce', done => {
     go(function*(){
@@ -86,13 +86,13 @@ describe('arrays', ()=> {
     })
   })  
 
-  it('detect')
-  it('detectSeries')
-  it('sortBy')
-  it('some')
-  it('every')
-  it('concat')
-  it('concatSeries')
+  // it('detect')
+  // it('detectSeries')
+  // it('sortBy')
+  // it('some')
+  // it('every')
+  // it('concat')
+  // it('concatSeries')
 })
 
 describe('control flow', ()=>{
@@ -118,7 +118,7 @@ describe('control flow', ()=>{
     })
   })
 
-  it('concurrentLimit')
+  // it('concurrentLimit')
 
 })
 
