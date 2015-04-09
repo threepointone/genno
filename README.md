@@ -38,11 +38,6 @@ go(function*(){
   }); //  [ 19643, 12148, 285823 ]
   // neat!
 
-  // the same, but in series
-  yield mapSeries(urls, function*(url){
-    return (yield fetch(url)).text.length;
-  });     //  [ 19683, 12148, 285826 ]
-
   // async filter like a boss
   yield filter(urls, function*(url){
     return (yield fetch(url)).text.length > 100000;
@@ -71,7 +66,7 @@ go(function*(){
 	yield waterfall([
   	function*(x){ yield timeout(800); return x*2 },
   	function*(x){ yield timeout(200); return x+5 },
-  	function*(x){ yield timeout(300); return 'c'; }], 2); 
+  	function*(x){ yield timeout(300); return x*x; }], 2); 
 	// 81, time taken 1300ms
 	
 });

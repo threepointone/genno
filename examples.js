@@ -21,11 +21,9 @@ function log(...args){
 go(function*(){  
   // do a bunch of requests in parallel, 
   // and save their response lengths
-  console.time('map');
   log(yield map(urls, function*(url){
     return (yield fetch(url)).text.length;
   })); //  [ 19643, 12148, 285823 ]
-  console.timeEnd('map');
   // neat!
 
   // the same, but in series
