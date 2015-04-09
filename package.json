@@ -1,0 +1,24 @@
+{
+  "name": "genno",
+  "version": "1.0.0",
+  "description": "flow control / async transforms with js-csp and generators ",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha tests.js --compilers js:babel/register"
+  },
+  "keywords": [
+    "generators",
+    "csp",
+    "async"
+  ],
+  "author": "Sunil Pai <threepointone@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "js-csp": "^0.4.0"
+  },
+  "devDependencies": {
+    "babel": "^5.0.12",
+    "chai": "^2.2.0",
+    "mocha": "^2.2.4"
+  }
+}
