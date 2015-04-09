@@ -13,7 +13,7 @@ async array transformations and flow control with generators and channels (via [
 ```js
 
 var {go, chan, putAsync, timeout} = require('js-csp'),
-  {map, mapSeries, filter, reduce, concurrent, series, waterfall} = require('./index.js');
+  {map, mapSeries, filter, reduce, concurrent, series, waterfall} = require('genno');
 
 // first, a helper to get a channel for a request
 function fetch(url){
