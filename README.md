@@ -66,7 +66,7 @@ go(function*(){
 	yield waterfall([
   	function*(x){ yield timeout(800); return x*2 },
   	function*(x){ yield timeout(200); return x+5 },
-  	function*(x){ yield timeout(300); return x*x; }], 2); 
+  	function*(x){ yield timeout(300); return x*x }], 2); 
 	// 81, time taken 1300ms
 	
 });
