@@ -1,5 +1,7 @@
-geno
+genno
 ---
+
+`npm install genno`
 
 async array transformations and flow control with generators and channels (via [js-csp](https://github.com/ubolonton/js-csp))
 
@@ -10,10 +12,8 @@ async array transformations and flow control with generators and channels (via [
 
 ```js
 
-var { go, chan, putAsync, timeout} = require('js-csp'),
+var {go, chan, putAsync, timeout} = require('js-csp'),
   {map, mapSeries, filter, reduce, concurrent, series, waterfall} = require('./index.js');
-
-var urls = ['http://www.google.com', 'http://www.jlongster.com', 'http://www.myntra.com'];
 
 // first, a helper to get a channel for a request
 function fetch(url){
@@ -23,8 +23,7 @@ function fetch(url){
   return ch;
 }
 
-
-
+var urls = ['http://www.google.com', 'http://www.jlongster.com', 'http://www.myntra.com'];
 
 go(function*(){  
   // do a bunch of requests in parallel, 
@@ -73,5 +72,7 @@ go(function*(){
 
  
 ```
+
+tests - `npm test`
 
 
