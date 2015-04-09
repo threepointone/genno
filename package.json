@@ -1,6 +1,6 @@
 {
   "name": "genno",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "flow control / async transforms with js-csp and generators ",
   "main": "index.js",
   "scripts": {
