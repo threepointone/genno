@@ -23,8 +23,13 @@ function fetch(url){
   return ch;
 }
 
-var urls = ['http://www.google.com', 'http://www.jlongster.com', 'http://www.myntra.com'];
+// some sample urls
+var urls = [
+	'http://www.google.com', 
+	'http://www.jlongster.com', 
+	'http://www.myntra.com'];
 
+// start a new go block
 go(function*(){  
   // do a bunch of requests in parallel, 
   // and save their response lengths
@@ -66,13 +71,11 @@ go(function*(){
 	yield waterfall([
   	function*(x){ yield timeout(800); return x*2 },
   	function*(x){ yield timeout(200); return x+5 },
-  	function*(x){ yield timeout(300); return 'c'; }]); 
+  	function*(x){ yield timeout(300); return 'c'; }], 2); 
+	// 81, time taken 1300ms
 	
 });
 
  
 ```
-
-tests - `npm test`
-
 
