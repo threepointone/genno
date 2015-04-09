@@ -25,9 +25,9 @@ function fetch(url){
 
 // some sample urls
 var urls = [
-	'http://www.google.com', 
-	'http://www.jlongster.com', 
-	'http://www.myntra.com'];
+  'http://www.google.com', 
+  'http://www.jlongster.com', 
+  'http://www.myntra.com'];
 
 // start a new go block
 go(function*(){  
@@ -46,29 +46,29 @@ go(function*(){
 
   // arbitrary reduce
   yield reduce(urls, function*(weight, url){
-  	return weight + (yield fetch(url)).text.length
-  }, 0); 		// 319457
+    return weight + (yield fetch(url)).text.length
+  }, 0);     // 319457
   // also available, reduceRight
 
   yield concurrent([
-  	function*(){ yield timeout(800); return 'a'; },
-  	function*(){ yield timeout(200); return 'b'; },
-  	function*(){ yield timeout(300); return 'c'; }]); 
-	// ['a', 'b', 'c' ], time taken 800ms
+    function*(){ yield timeout(800); return 'a'; },
+    function*(){ yield timeout(200); return 'b'; },
+    function*(){ yield timeout(300); return 'c'; }]); 
+  // ['a', 'b', 'c' ], time taken 800ms
 
-	
+  
   yield series([
-  	function*(){ yield timeout(800); return 'a'; },
-  	function*(){ yield timeout(200); return 'b'; },
-  	function*(){ yield timeout(300); return 'c'; }]); 
-	// ['a', 'b', 'c' ], time taken 1300ms
+    function*(){ yield timeout(800); return 'a'; },
+    function*(){ yield timeout(200); return 'b'; },
+    function*(){ yield timeout(300); return 'c'; }]); 
+  // ['a', 'b', 'c' ], time taken 1300ms
 
-	yield waterfall([
-  	function*(x){ yield timeout(800); return x*2 },
-  	function*(x){ yield timeout(200); return x+5 },
-  	function*(x){ yield timeout(300); return x*x }], 2); 
-	// 81, time taken 1300ms
-	
+  yield waterfall([
+    function*(x){ yield timeout(800); return x*2 },
+    function*(x){ yield timeout(200); return x+5 },
+    function*(x){ yield timeout(300); return x*x }], 2); 
+  // 81, time taken 1300ms
+  
 });
 
  
